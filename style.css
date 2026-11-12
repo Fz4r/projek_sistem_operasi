@@ -1,0 +1,71 @@
+:root {
+  --ink: #17252a;
+  --muted: #5d6f75;
+  --paper: #f3f6f5;
+  --surface: #ffffff;
+  --line: #d6dfdd;
+  --brand: #0f766e;
+  --brand-dark: #0b5a54;
+  --err-bg: #fdecec; --err: #a12626;
+  --ok-bg: #e4f5ee; --ok: #176046;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+h1 { font-size: 1.6rem; margin: 0 0 1rem; }
+h2 { font-size: 1.05rem; margin: 0 0 .75rem; }
+.muted { color: var(--muted); font-size: .92rem; }
+
+/* Halaman login & registrasi */
+body.auth { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+.panel {
+  width: 100%; max-width: 400px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--brand);
+  border-radius: 6px;
+  padding: 2rem;
+}
+label { display: block; margin: 1rem 0 .3rem; font-size: .92rem; font-weight: 600; }
+input {
+  width: 100%; padding: .65rem .75rem;
+  border: 1px solid var(--line); border-radius: 4px;
+  font: inherit; background: #fff;
+}
+input:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 3px solid #7cc9c0; outline-offset: 1px;
+}
+button {
+  width: 100%; margin-top: 1.4rem; padding: .7rem;
+  background: var(--brand); color: #fff;
+  border: 0; border-radius: 4px;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+button:hover { background: var(--brand-dark); }
+.alt { margin: 1.25rem 0 0; text-align: center; font-size: .92rem; color: var(--muted); }
+a { color: var(--brand); }
+.alert { margin: 0 0 .75rem; padding: .6rem .8rem; border-radius: 4px; font-size: .92rem; }
+.alert.err { background: var(--err-bg); color: var(--err); }
+.alert.ok  { background: var(--ok-bg); color: var(--ok); }
+
+/* Dashboard */
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .9rem 1.5rem; background: var(--ink); color: #fff;
+}
+.btn-link { color: #fff; text-decoration: none; padding: .35rem .8rem; border: 1px solid #5d7a80; border-radius: 4px; }
+.btn-link:hover { background: #24383e; }
+.content { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; }
+dl { margin: 0; }
+dt { font-size: .85rem; color: var(--muted); margin-top: .6rem; }
+dd { margin: 0; font-weight: 600; word-break: break-word; }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { display: flex; justify-content: space-between; gap: 1rem; padding: .5rem 0; border-bottom: 1px solid var(--line); }
+.list li:last-child { border-bottom: 0; }
